@@ -1,0 +1,17 @@
+ {% extends 'base.html' %} 
+ {% block content %}
+<div class='container' >
+    <h3 class='display-3' >Time </h3>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Selecione Time</option>
+        <option value="1">Vasco</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    <h3 class='display-3' >Local </h3>
+    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+
+    <h3 class='display-3' >Data </h3>
+    <input id="date" type="date">
+</div>
+ {% endblock %}
