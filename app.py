@@ -1,3 +1,4 @@
+from calendar import c
 from math import atan2
 from os import curdir
 from xmlrpc.server import list_public_methods
@@ -77,5 +78,25 @@ def cada_competicao2():
         conn.commit()
         return redirect(url_for('index'))
     
+@app.route('/cadresult2')
+def cadastro_resultado2():
+    cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    s = "SELECT * FROM partidas"
+    cur.execute(s) #executa o SQL
+    list_times = cur.fetchall() #retorna todos os registros
+    return render_template('castrar_result_final.html' , list_times=list_times)
+ 
+@app.route('/cadresult3', methods=['POST'])
+def cadastro_resultado3():
+    cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    if request.method == 'POST':
+        time1 = request.form['time1']
+        time2 = request.form['time2']
+        cur.execute(s) #executa o SQL
+        list_times2 = cur.fetchall()
+        cur.execute("INSERT INTO partidas2 (time1, time2) VALUES (%s, %s )", (time1, time2))
+        s = "SELECT * FROM partidas2"
+        return redirect(url_for('cadastro_resultado2' , list_times2=list_times2))
+ 
 if __name__ == "__main__":
     app.run(debug=True)

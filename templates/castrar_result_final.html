@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+  <div class="col-md-2 col-xs-4">
+    <div class="form-group">
+      <label for="unidadeVolume">Competição</label>
+      <select class="form-control" data-size="5" data-live-search="true" data-width="100%" name="unidadeVolume" required>
+            <option selected disabled>Escolha uma opção</option>
+            {% for times in list_times %}
+            <option>{{times[1]}}</option>
+            {% endfor %}
+        </select>
+    </div>
+  </div>
+  <form action="{{ url_for('cadastro_resultado3') }}" method="POST">
+  <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="volumeBolsa">Time1:</label>
+      <input type="text" class="form-control" name="time1" placeholder="Volume" required>
+    </div>
+  </div>
+  <h3 class="display-4">X</h3>
+  <div class="col-md-4 col-xs-4">
+    <div class="form-group">
+      <label for="volumeBolsa">Time2:</label>
+      <input type="text" class="form-control" name="time2" placeholder="Volume" required>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-outline-success">Enviar</button>
+</form> 
+
+<br><br> <br><br> <br><br>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+       
+        <th scope="col">
+          {% for times in list_times2 %}
+          <div class="col-md-4 col-xs-4">
+            <div class="form-group">
+              <label for="volumeBolsa">{{times[1]}}:</label>
+              <input type="text" class="form-control" name="volumeBolsa" placeholder="Placar" required>
+            </div>
+          </div>
+        </th>
+        <th scope="col">
+          <div class="col-md-4 col-xs-4">
+            <div class="form-group">
+              <label >{{times[1]}}</label>
+              <input type="text" class="form-control" name="volumeBolsa" placeholder="Placar" required>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+      </tr>
+    </tbody>
+  </table>
+  <th scope="col"> <button type="button" class="btn btn-outline-success">Enviar</button></th> 
+  {% endfor %}
+  </div>
+{% endblock %}
