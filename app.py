@@ -56,7 +56,7 @@ def ver_ranking():
 
 @app.route('/cadresult')
 def cadastro_resultado():
-    return render_template('cadastro_resultado.html')
+    return render_template('castrar_result_final.html')
 
 @app.route('/cadcompeticao')
 def cadastro_competicao():

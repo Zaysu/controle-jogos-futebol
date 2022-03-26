@@ -15,11 +15,31 @@
 	ata2 VARCHAR ( 40 ) NOT null,
 	ata3 VARCHAR ( 40 ) NOT null
 ); 
-para o cadastro do nome do time com nome dos jogadores
+3° execute o comando: 
+	CREATE TABLE partidas (
+	id serial PRIMARY KEY,
+	clube VARCHAR (40) NOT null,
+	localidade VARCHAR ( 40 ) NOT null,
+	tempo VARCHAR ( 40 ) NOT null
+);
 
-Caso queira fazer população do banco de forma manual:
-INSERT INTO cadtimes (id, nome, gk, lte, zag1, zag2, ltd, mei1, mei2, mei3, ata1, ata2, ata3)
-VALUES 
-	('1','Vasco Da Gama', 'Thiago Rodrigues', 'Riquelme', 'Anderson Con', 'Quinteiro', 'Leo Kratos', 'Nene', 'Yuri Lara', 'Zé Gabriel', 'Gabriel Pec', 'Bruno Nazaro', 'Raniel'),
-	('2','Flamengo', 'Hugo Souza', 'Rene', 'Leo Pereira', 'G. Henrique', 'F. Luiz', 'Thiago Maia', 'Gomes', 'Arrascaeta', 'Pedro', 'Gabriel Barbosa', 'Vitinho');
-	
+4° execute o comando: 
+	CREATE TABLE partidas (
+	id serial PRIMARY KEY,
+	time1 VARCHAR (40) NOT null,
+	time2 VARCHAR ( 40 ) NOT null
+);
+
+5° Execute o Requeriments.txt para instalar as bibliotecas caso necessario
+
+Recomendavel era usar sqlalchemy(percebi no decorrer do projeto) para fazer o auto incremento e foreignkey em algumas tabelas, mas fui pelo caminho do psycopg2, não vou ter tempo de terminar o projeto então estou encaminhando o repositorio do git, que vai ser atualizado com tempo para finalizar
+
+Projeto cadastrando, Times com posições, Competições com local e data, e Cadastrando as partidas entre os times
+
+Aluno: José Carlos Romão 
+Matricula: 202110818
+Curso: Eng. Software
+Campus: Vassouras
+Periodo: 3° (Até data atual 26/03/22)
+Atualmente: Estagiario Desenvolvimento Web
+Empresa: Simões Traduções Interpretações

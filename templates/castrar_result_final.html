@@ -36,10 +36,10 @@
       <tr>
        
         <th scope="col">
-          {% for times in list_times2 %}
+          
           <div class="col-md-4 col-xs-4">
             <div class="form-group">
-              <label for="volumeBolsa">{{times[1]}}:</label>
+              <label for="volumeBolsa">Time1</label>
               <input type="text" class="form-control" name="volumeBolsa" placeholder="Placar" required>
             </div>
           </div>
@@ -47,7 +47,7 @@
         <th scope="col">
           <div class="col-md-4 col-xs-4">
             <div class="form-group">
-              <label >{{times[1]}}</label>
+              <label >Time 2</label>
               <input type="text" class="form-control" name="volumeBolsa" placeholder="Placar" required>
             </div>
           </div>
@@ -58,6 +58,5 @@
     </tbody>
   </table>
   <th scope="col"> <button type="button" class="btn btn-outline-success">Enviar</button></th> 
-  {% endfor %}
   </div>
 {% endblock %}
