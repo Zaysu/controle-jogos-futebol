@@ -45,7 +45,6 @@ def cadastro_time():
         flash('Time cadastrado com sucesso!')
         return redirect(url_for('index'))
     
-
 @app.route('/cadtime2')
 def cadastro_time2():            
     return render_template('cadastro_time.html')
@@ -60,8 +59,23 @@ def cadastro_resultado():
 
 @app.route('/cadcompeticao')
 def cadastro_competicao():
-    return render_template('cadastro_competicao.html')
-    
+    cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    s = "SELECT * FROM cadtimes"
+    cur.execute(s) #executa o SQL
+    list_times = cur.fetchall() #retorna todos os registros
+    return render_template('cadastro_competicao.html' , list_times=list_times)
+
+@app.route('/cadcompeticao2', methods=['POST'])
+def cada_competicao2():
+    cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    s = "SELECT * FROM cadtimes"
+    if request.method == 'POST':
+        clube = request.form['clube']
+        localidade = request.form['localidade']
+        tempo = request.form['tempo']
+        cur.execute("INSERT INTO partidas (clube, localidade, tempo) VALUES (%s, %s, %s )", (clube, localidade, tempo))
+        conn.commit()
+        return redirect(url_for('index'))
     
 if __name__ == "__main__":
     app.run(debug=True)

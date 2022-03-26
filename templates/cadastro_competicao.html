@@ -1,17 +1,18 @@
  {% extends 'base.html' %} 
  {% block content %}
-<div class='container' >
-    <h3 class='display-3' >Time </h3>
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Selecione Time</option>
-        <option value="1">Vasco</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    <h3 class='display-3' >Local </h3>
-    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+ <form action="{{url_for('cada_competicao2')}}" method="post">
 
-    <h3 class='display-3' >Data </h3>
-    <input id="date" type="date">
-</div>
+  <div class='container' >
+      <h3 class='display-3' >Nome Competição </h3>
+    
+          <input class="form-control" type="text" placeholder="Campeonato" aria-label="default input example" name="clube">
+        
+      <h3 class='display-3' >Local </h3>
+      <input class="form-control" type="text" placeholder="Local" aria-label="default input example" name="localidade">
+
+      <h3 class='display-3' >Data </h3>
+      <input id="date" type="date" name="tempo"><br><br>
+      <button type="submit" class="btn btn-dark">Submit</button>
+  </div>
+</form>
  {% endblock %}
