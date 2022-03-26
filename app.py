@@ -6,6 +6,7 @@ import psycopg2
 import psycopg2.extras
 
 app = Flask(__name__)
+app.secret_key = "ZaysuJr Apenas"
 
 
 DB_HOST = 'localhost'
@@ -23,9 +24,8 @@ def index():
     list_times = cur.fetchall() #retorna todos os registros
     return render_template('index.html', list_times=list_times)
 
-@app.route('/cadtime', methods=['GET', 'POST'])
+@app.route('/cadtime', methods=['POST'])
 def cadastro_time():
-    
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     if request.method == 'POST':
         nome = request.form['nome']
@@ -44,9 +44,11 @@ def cadastro_time():
         conn.commit()
         flash('Time cadastrado com sucesso!')
         return redirect(url_for('index'))
-       
-        
     
+
+@app.route('/cadtime2')
+def cadastro_time2():            
+    return render_template('cadastro_time.html')
 
 @app.route('/cadraking')
 def ver_ranking():

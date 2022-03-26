@@ -5,58 +5,49 @@
 <h4 class="display-4"> 
     <br>
 <form action="{{url_for('cadastro_time')}}" method="POST">
-    Inscreva seu time<br>
-    Nome do Time: <br><input class="form-control" type="text" placeholder="Time" aria-label="default input example">
-</h4><br>
+        Inscreva seu time<br>
+        Nome do Time: <br><input class="form-control" type="text" placeholder="Time" aria-label="default input example" name="nome">
+    </h4><br>
 
-<h4 class="display-4"> 
-    GK: <input class="form-control" type="text" placeholder="Goleiro" aria-label="default input example"  name="gk">
-</h4>
-<h4 class="display-4"> 
-    LDE: <input class="form-control" type="text" placeholder="Lateral Direito" aria-label="default input example" name="lte">
-</h4>
+    <h4 class="display-4"> 
+        GK: <input class="form-control" type="text" placeholder="Goleiro" aria-label="default input example"  name="gk">
+    </h4>
+    <h4 class="display-4"> 
+        LDE: <input class="form-control" type="text" placeholder="Lateral Direito" aria-label="default input example" name="lte">
+    </h4>
 
-<h4 class="display-4"> 
-    ZAG1: <input class="form-control" type="text" placeholder="ZAG" aria-label="default input example"  name="zag1">
-</h4>
-<h4 class="display-4"> 
-    ZAG2: <input class="form-control" type="text" placeholder="ZAG" aria-label="default input example"  name="zag2">
-</h4>
+    <h4 class="display-4"> 
+        ZAG1: <input class="form-control" type="text" placeholder="ZAG" aria-label="default input example"  name="zag1">
+    </h4>
+    <h4 class="display-4"> 
+        ZAG2: <input class="form-control" type="text" placeholder="ZAG" aria-label="default input example"  name="zag2">
+    </h4>
 
-<h4 class="display-4"> 
-    LDR: <input class="form-control" type="text" placeholder="Lateral Esquerdo" aria-label="default input example"  name="ltd">
-</h4>
-<h4 class="display-4"> 
-    MEI: <input class="form-control" type="text" placeholder="Meia" aria-label="default input example"  name="mei1">
-</h4>
-<h4 class="display-4"> 
-    MEI: <input class="form-control" type="text" placeholder="Meia" aria-label="default input example" name="mei2">
-</h4>
-<h4 class="display-4"> 
-    MEI: <input class="form-control" type="text" placeholder="Meia" aria-label="default input example" name="mei3">
-</h4>
+    <h4 class="display-4"> 
+        LDR: <input class="form-control" type="text" placeholder="Lateral Esquerdo" aria-label="default input example"  name="ltd">
+    </h4>
+    <h4 class="display-4"> 
+        MEI: <input class="form-control" type="text" placeholder="Meia" aria-label="default input example"  name="mei1">
+    </h4>
+    <h4 class="display-4"> 
+        MEI: <input class="form-control" type="text" placeholder="Meia" aria-label="default input example" name="mei2">
+    </h4>
+    <h4 class="display-4"> 
+        MEI: <input class="form-control" type="text" placeholder="Meia" aria-label="default input example" name="mei3">
+    </h4>
 
-<h4 class="display-4"> 
-    ATA: <input class="form-control" type="text" placeholder="Atacante" aria-label="default input example" name="ata1">
-</h4>
-<h4 class="display-4"> 
-    ATA: <input class="form-control" type="text" placeholder="Atacante" aria-label="default input example" name="ata2">
-</h4>
-<h4 class="display-4"> 
-    ATA: <input class="form-control" type="text" placeholder="Atacante" aria-label="default input example" name="ata3">
-</h4>
-</div>
-
-{% with messages = get_flashed_message() %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-success" role="alert">
-                 <button type="button" class="btn btn-outline-success">
-                    {{ message }}
-                </button>
-            </div>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
+    <h4 class="display-4"> 
+        ATA: <input class="form-control" type="text" placeholder="Atacante" aria-label="default input example" name="ata1">
+    </h4>
+    <h4 class="display-4"> 
+        ATA: <input class="form-control" type="text" placeholder="Atacante" aria-label="default input example" name="ata2">
+    </h4>
+    <h4 class="display-4"> 
+        ATA: <input class="form-control" type="text" placeholder="Atacante" aria-label="default input example" name="ata3">
+    </h4>
+    </div>
+    <button type="submit" class="btn btn-outline-success">
+                   Cadastrar 
+    </button>       
 </form>
 {% endblock %}
