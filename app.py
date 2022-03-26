@@ -10,10 +10,10 @@ app = Flask(__name__)
 app.secret_key = "ZaysuJr Apenas"
 
 
-DB_HOST = 'localhost'
-DB_NOME = 'football'
-DB_USER = 'postgres'
-DB_PASS = 'rootpost'
+DB_HOST = 'localhost' #CONFIGURAÇÃO DO BANCO DE DADOS
+DB_NOME = 'football' #CONFIGURAÇÃO DO BANCO DE DADOS
+DB_USER = 'postgres' #CONFIGURAÇÃO DO BANCO DE DADOS
+DB_PASS = 'rootpost' #CONFIGURAÇÃO DO BANCO DE DADOS
 
 conn = psycopg2.connect(host=DB_HOST, database=DB_NOME, user=DB_USER, password=DB_PASS)
 
